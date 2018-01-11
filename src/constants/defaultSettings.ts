@@ -7,6 +7,7 @@ const settings:SettingsMap = {
   showHeader: true,
   showChannels: true,
   showChannelIcons: true,
+  showServerStats: true,
 };
 
 export default settings;

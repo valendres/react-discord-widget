@@ -31,6 +31,10 @@ export interface ThemeMap {
   memberFontWeight: string;
   memberSpacing: string;
 
+  serverStatsFontColor: string;
+  serverStatsFontSize: string;
+  serverStatsFontWeight: string;
+
   statusIndicatorBorderWidth: string;
   statusIndicatorOffset: string;
   statusIndicatorSize: string;

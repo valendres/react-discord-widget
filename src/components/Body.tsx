@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import styledWithProps from '../helpers/react/withStyledProps';
 
 const Container = styledWithProps<any>()(styled.div)`
+  flex: 1 1 auto;
   background-color: ${props => props.theme.bodyBackgroundColor};
   padding: ${props => props.theme.bodyPadding};
 `;

@@ -10,6 +10,9 @@ const Title = styledWithProps<any>()(styled.div)`
   color: ${props => props.theme.channelFontColor};
   font-size: ${props => props.theme.channelFontSize};
   font-weight: ${props => props.theme.channelFontWeight};
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 `;
 
 const Icon = styledWithProps<any>()(styled.span)`

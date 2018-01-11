@@ -13,8 +13,10 @@ import Header from '../components/Header';
 import Body from '../components/Body';
 import Channel from '../components/Channel';
 import Member from '../components/Member';
+import ServerStats from '../components/ServerStats';
 
 const initialState:AppState = {
+  initialized: false,
   loading: true,
   name: '',
   channels: {
@@ -35,7 +37,12 @@ interface ContainerProps {
   loading?: boolean;
 }
 
-const Container = styledWithProps<ContainerProps>()(styled.div)``;
+const Container = styledWithProps<ContainerProps>()(styled.div)`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+`;
 
 export default class App extends React.Component<AppProps, {}> {
   state:AppState = initialState;
@@ -65,11 +72,17 @@ export default class App extends React.Component<AppProps, {}> {
       settings,
     } = this.props;
     const {
+      initialized,
       loading,
       name,
       channels,
       members,
     } = this.state;
+
+    const allPlayers = members.keys
+      .map((key:string) => members.data[key]);
+    const onlinePlayers = allPlayers
+      .filter((member:MemberType) => member.channel_id !== undefined);
 
     return (
       <Container>
@@ -95,6 +108,12 @@ export default class App extends React.Component<AppProps, {}> {
               .map((member:MemberType) => (
                 <Member key={member.id} {...member} />
               ))
+          }
+          {initialized && settings.showServerStats &&
+            <ServerStats
+              onlineCount={onlinePlayers.length}
+              totalCount={allPlayers.length}
+            />
           }
         </Body>
       </Container>

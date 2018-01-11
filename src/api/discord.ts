@@ -7,7 +7,8 @@ export const fetchServerData = (server_id:string):Promise<Server> => {
 
 export const parseServerData = (server:Server):AppState => {
   const state:AppState = {
-    name: '',
+    initialized: true,
+    name: server.name,
     channels: {
       keys: [] as [string],
       data: {},
@@ -17,8 +18,6 @@ export const parseServerData = (server:Server):AppState => {
       data: {},
     },
   };
-
-  state.name = server.name;
 
   // Iterate over channels
   server.channels

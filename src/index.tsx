@@ -73,7 +73,3 @@ ReactDOM.render(
   </ThemeProvider>,
   rootEl,
 );
-
-if (module.hot) {
-
-}

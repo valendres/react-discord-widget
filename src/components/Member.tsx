@@ -16,7 +16,11 @@ const statusColor = (status:string):string => {
 };
 
 const Container = styledWithProps<any>()(styled.div)`
+  color: ${props => props.theme.memberFontColor};
   margin: ${props => props.theme.memberSpacing} 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 const Avatar = styledWithProps<any>()(styled.div)`
@@ -51,9 +55,9 @@ const Avatar = styledWithProps<any>()(styled.div)`
 `;
 
 const Name = styledWithProps<any>()(styled.span)`
-  color: ${props => props.theme.memberFontColor};
   font-size: ${props => props.theme.memberFontSize};
   font-weight: ${props => props.theme.memberFontWeight};
+  text-overflow: ellipsis;
 `;
 
 interface MemberProps {

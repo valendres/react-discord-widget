@@ -5,4 +5,5 @@ export interface SettingsMap {
   showHeader: boolean;
   showChannels: boolean;
   showChannelIcons: boolean;
+  showServerStats: boolean;
 }

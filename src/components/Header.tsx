@@ -4,12 +4,16 @@ import styledWithProps from '../helpers/react/withStyledProps';
 import { Server as ServerType } from '../types';
 
 const Container = styledWithProps<any>()(styled.div)`
+  flex: 0 0 auto;
+  color: ${props => props.theme.headerFontColor};
   background-color: ${props => props.theme.headerBackgroundColor};
   padding: ${props => props.theme.headerPadding};
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 const Name = styledWithProps<any>()(styled.span)`
-  color: ${props => props.theme.headerFontColor};
   font-size: ${props => props.theme.headerFontSize};
   font-weight: ${props => props.theme.headerFontWeight};
 `;

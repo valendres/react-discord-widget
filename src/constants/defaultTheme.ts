@@ -33,6 +33,10 @@ const theme:ThemeMap = {
   memberFontWeight: '200',
   memberSpacing: '4px',
 
+  serverStatsFontColor: '#dcddde',
+  serverStatsFontSize: '0.8rem',
+  serverStatsFontWeight: '200',
+
   statusIndicatorBorderWidth: '2px',
   statusIndicatorOffset: '-2px',
   statusIndicatorSize: '8px',

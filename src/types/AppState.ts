@@ -1,6 +1,7 @@
 import { ChannelMap, MemberMap } from './';
 
 export interface AppState {
+  initialized?: boolean;
   loading?: boolean;
   name?: string;
   channels: {

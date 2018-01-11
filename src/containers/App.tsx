@@ -77,18 +77,24 @@ export default class App extends React.Component<AppProps, {}> {
           <Header name={settings.serverName || name}/>
         }
         <Body>
-          {channels.keys
-            .map((channelKey:string) => channels.data[channelKey])
-            .map((channel:ChannelType) => {
-              const membersArray = channel.memberKeys
-                  .map((memberKey:string):MemberType => members.data[memberKey]);
-              return <Channel
-                key={channel.id}
-                name={channel.name}
-                members={membersArray}
-                settings={this.props.settings}
-              />;
-            })
+          {settings.showChannels
+            ? channels.keys
+              .map((channelKey:string) => channels.data[channelKey])
+              .map((channel:ChannelType) => {
+                const membersArray = channel.memberKeys
+                    .map((memberKey:string):MemberType => members.data[memberKey]);
+                return <Channel
+                  key={channel.id}
+                  name={channel.name}
+                  members={membersArray}
+                  settings={this.props.settings}
+                />;
+              })
+            : members.keys
+              .map((memberKey:string) => members.data[memberKey])
+              .map((member:MemberType) => (
+                <Member key={member.id} {...member} />
+              ))
           }
         </Body>
       </Container>

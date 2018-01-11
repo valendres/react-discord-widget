@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import styledWithProps from '../helpers/react/withStyledProps';
 
 const Container = styledWithProps<any>()(styled.div)`
-  backgroundColor: ${props => props.theme.bodyBackgroundColor};
+  background-color: ${props => props.theme.bodyBackgroundColor};
   padding: ${props => props.theme.bodyPadding};
 `;
 

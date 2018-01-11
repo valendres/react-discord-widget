@@ -11,6 +11,7 @@
   "author": "Peter Weller",
   "license": "MIT",
   "dependencies": {
+    "lodash.omit": "^4.5.0",
     "lodash.pick": "^4.4.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -19,6 +20,7 @@
   },
   "devDependencies": {
     "@types/html-webpack-plugin": "^2.30.1",
+    "@types/lodash.omit": "^4.5.3",
     "@types/lodash.pick": "^4.4.3",
     "@types/node": "^8.5.2",
     "@types/react": "^16.0.31",

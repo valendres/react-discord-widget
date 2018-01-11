@@ -54,12 +54,12 @@ export default class Channel extends React.PureComponent<ChannelProps>  {
     return (
       <Container>
         <Title>
-          {settings.showChannelIcon &&
+          {settings.showChannelIcons &&
             <Icon />
           }
           <span>{name}</span>
         </Title>
-        <Members indent={settings.showChannelIcon}>
+        <Members indent={settings.showChannelIcons}>
           {members.map((member:MemberType) => (
             <Member key={member.id} {...member} />
           ))}

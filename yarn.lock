@@ -21,6 +21,12 @@
     "@types/html-minifier" "*"
     "@types/webpack" "*"
 
+"@types/lodash.omit@^4.5.3":
+  version "4.5.3"
+  resolved "https://registry.yarnpkg.com/@types/lodash.omit/-/lodash.omit-4.5.3.tgz#38a28731b4123282fbc057656c5f5131e171d44b"
+  dependencies:
+    "@types/lodash" "*"
+
 "@types/lodash.pick@^4.4.3":
   version "4.4.3"
   resolved "https://registry.yarnpkg.com/@types/lodash.pick/-/lodash.pick-4.4.3.tgz#2d979a8e2a553a26b9aa46a1d6d0bf7d07507bb4"
@@ -2282,6 +2288,10 @@ locate-path@^2.0.0:
   dependencies:
     p-locate "^2.0.0"
     path-exists "^3.0.0"
+
+lodash.omit@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.omit/-/lodash.omit-4.5.0.tgz#6eb19ae5a1ee1dd9df0b969e66ce0b7fa30b5e60"
 
 lodash.pick@^4.4.0:
   version "4.4.0"

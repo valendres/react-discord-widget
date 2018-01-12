@@ -24,12 +24,12 @@ A full list of configuration options are listed below.
 | Key | Data Type | Default | Description |
 | :--- | :---: | :--- | :--- |
 | `serverId` | number | - | **Required:** the Discord server server  D. It can be obtained by following [this guide](https://support.discordapp.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-) |
-| `refreshInterval` | number | 10000 | The frequency (in miliseconds) which server data will be fetched. |
+| `refreshInterval` | number | 10000 | The frequency (in milliseconds) which server data will be fetched. |
 | `serverName` | string | auto | A custom server name to displayed in the header. If this parameter is not provided, your _Server Name_ as defined in _Server Settings_ will be used. |
-| `showHeader` | boolean | true | Toggle visiblity of the header |
-| `showChannels` | boolean | true | Toggle visiblity of the channel names. If this option is enabled, only members in voice channels will be displayed. Otherwise, all members currently signed into Discord will be shown. |
-| `showChannelIcons` | boolean | true | Toggle visiblity of the channel icons. |
-| `showServerStats` | boolean | true | Toggle visiblity of server statistics. Format is: _{players in channel count}_/_{total players online count}_|
+| `showHeader` | boolean | true | Toggle visibility of the header |
+| `showChannels` | boolean | true | Toggle visibility of the channel names. If this option is enabled, only members in voice channels will be displayed. Otherwise, all members currently signed into Discord will be shown. |
+| `showChannelIcons` | boolean | true | Toggle visibility of the channel icons. |
+| `showServerStats` | boolean | true | Toggle visibility of server statistics. Format is: _{players in channel count}_/_{total players online count}_|
 | `avatarBorderRadius` | string | 50% | ... |
 | `avatarMarginRight` | string | 8px | ... |
 | `avatarSize` | string | 20px | ... |

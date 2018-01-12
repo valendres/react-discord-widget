@@ -24,7 +24,7 @@ const Container = styledWithProps<any>()(styled.div)`
   font-weight: ${props => props.theme.serverStatsFontWeight};
   background-color: ${props => props.theme.bodyBackgroundColor};
   box-shadow: 0 0 4px 3px ${props => props.theme.bodyBackgroundColor};
-  padding: 0 ${props => props.theme.bodyPadding} 4px 2px;
+  padding: 0 ${props => props.theme.bodyPadding} ${props => props.theme.bodyPadding} 2px;
 `;
 
 const Label = styled.span`

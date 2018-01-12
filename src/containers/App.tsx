@@ -1,4 +1,5 @@
 import * as React from 'react';
+import assign from 'lodash.assign';
 import styled from 'styled-components';
 import styledWithProps from '../helpers/react/withStyledProps';
 import { fetchServerData, parseServerData } from '../api/discord';
@@ -60,7 +61,7 @@ export default class App extends React.Component<AppProps, {}> {
         })
         .then(parseServerData)
         .then((newState:AppState) => {
-          this.setState(Object.assign({}, newState, {
+          this.setState(assign({}, newState, {
             loading: false,
           }));
         });

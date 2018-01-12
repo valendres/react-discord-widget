@@ -3,15 +3,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: [
-    'react-hot-loader/patch',
-    './src/index.tsx',
-  ],
-  output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
-  },
-
   // Enable sourcemaps for debugging webpack's output.
   devtool: 'source-map',
 
@@ -22,7 +13,6 @@ module.exports = {
 
   plugins: [
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       title: 'Discord Widget',
       chunksSortMode: 'dependency',
@@ -36,22 +26,11 @@ module.exports = {
       {
         test: /\.tsx?$/,
         loaders: [
-          'react-hot-loader/webpack',
           'awesome-typescript-loader',
         ],
         exclude: path.resolve(__dirname, 'node_modules'),
         include: path.resolve(__dirname, 'src'),
       },
-      // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-      {
-        enforce: 'pre',
-        test: /\.js$/,
-        loader: 'source-map-loader',
-      },
     ],
-  },
-
-  devServer: {
-    hot: true,
   },
 };

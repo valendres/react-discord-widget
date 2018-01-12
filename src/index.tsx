@@ -1,7 +1,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import pick from 'lodash.pick';
+import assign from 'lodash.assign';
 import omit from 'lodash.omit';
+import pick from 'lodash.pick';
 import { AppContainer } from 'react-hot-loader';
 import { ThemeProvider, injectGlobal } from 'styled-components';
 
@@ -18,7 +19,7 @@ const getConfigurationFromUrl = (url:string):any => {
       .reduce(
         (output:any = {}, entry:string[]):any => {
           const [key, value] = entry;
-          return Object.assign(output, {
+          return assign(output, {
             [key]: value === 'true' ? true : value === 'false' ? false : value,
           });
         },
@@ -47,11 +48,11 @@ handleUnknownConfiguration(routeParams);
 
 // Settings
 const customSettings:any = pick(routeParams, Object.keys(defaultSettings));
-const settings:SettingsMap = Object.assign({}, defaultSettings, customSettings);
+const settings:SettingsMap = assign({}, defaultSettings, customSettings);
 
 // Theme
 const customTheme:any = pick(routeParams, Object.keys(defaultTheme));
-const theme:ThemeMap = Object.assign({}, defaultTheme, customTheme);
+const theme:ThemeMap = assign({}, defaultTheme, customTheme);
 
 
 injectGlobal`

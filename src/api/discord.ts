@@ -1,3 +1,4 @@
+import assign from 'lodash.assign';
 import { Server, AppState, Channel, Member } from '../types';
 
 export const fetchServerData = (server_id:string):Promise<Server> => {
@@ -24,7 +25,7 @@ export const parseServerData = (server:Server):AppState => {
     .sort((a:Channel, b:Channel):number => a.position - b.position)
     .forEach((channel:Channel) => {
       state.channels.keys.push(channel.id);
-      state.channels.data[channel.id] = Object.assign({}, channel, {
+      state.channels.data[channel.id] = assign({}, channel, {
         memberKeys: [] as [string],
       });
     });
@@ -36,7 +37,7 @@ export const parseServerData = (server:Server):AppState => {
     })
     .forEach((member:Member) => {
       state.members.keys.push(member.id);
-      state.members.data[member.id] = Object.assign({}, member);
+      state.members.data[member.id] = assign({}, member);
       if (member.channel_id) {
         state.channels.data[member.channel_id].memberKeys.push(member.id);
       }
